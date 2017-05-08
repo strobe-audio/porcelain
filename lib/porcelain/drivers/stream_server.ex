@@ -9,7 +9,7 @@ defmodule Porcelain.Driver.Common.StreamServer do
   use GenServer
 
   def start() do
-    GenServer.start(__MODULE__, state(chunks: :queue.new))
+    GenServer.start_link(__MODULE__, state(chunks: :queue.new))
   end
 
   def get_data(pid) do
